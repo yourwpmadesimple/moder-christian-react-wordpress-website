@@ -5,6 +5,7 @@ import { connect, Global, css, styled } from "frontity"
 import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 
+import Loading from "./loading"
 import List from "./list"
 import Post from "./post"
 import Page from "./page"
@@ -50,6 +51,7 @@ const Root = ({ state, actions}) => {
       <hr />
       <Main>
       <Switch>
+      <Loading when={data.isFetching} />
       <List when={data.isArchive} />
       <Page when={data.isPage} />
       <Post when={data.isPost} />
