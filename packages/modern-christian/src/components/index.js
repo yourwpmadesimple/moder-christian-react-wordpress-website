@@ -27,7 +27,7 @@ const Root = ({ state }) => {
     `}
     />
     {/* ... */}
-    <Header>
+    <Header isPostType={data.isPostType}> {/**** prop isPostType ****/}
     <HeaderContent>
     <h1>Hello Frontity</h1>
       <p>Current URL: {state.router.link}</p>
