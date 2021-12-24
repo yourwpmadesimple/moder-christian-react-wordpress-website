@@ -30,7 +30,7 @@ const Root = ({ state }) => {
     <Header isPostType={data.isPostType} isPage={data.isPage}> {/**** prop isPage. This prop gets passed to a function that we add to our CSS that conditionally checks the boolean value passed in to determine what colour the border should be, i.e. either green in the case of a post or page, or maroon in the case of a list ****/}
     <HeaderContent>
     <h1>Hello Frontity</h1>
-      <p>Current URL: {state.router.link}</p>
+      { state.theme.isUrlVisible ? <p> current URK: {state.router.link}</p> : null}
       <Menu>
         <Link link="/">Home</Link>
         <br />

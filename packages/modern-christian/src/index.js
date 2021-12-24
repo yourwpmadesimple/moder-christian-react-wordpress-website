@@ -11,7 +11,9 @@ const myFirstTheme = {
     theme: {},
   },
   actions: {
-    theme: {},
+    theme: {
+      isUrlVisible: false
+    },
   },
 }
 
