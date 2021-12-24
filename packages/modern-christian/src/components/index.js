@@ -1,7 +1,7 @@
 // File: /packages/my-first-theme/src/components/index.js
 
 import React from "react"
-import { connect } from "frontity"
+import { connect, Global, css } from "frontity"
 import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 
@@ -14,6 +14,13 @@ const Root = ({ state }) => {
 
   return (
     <>
+    <Global styles={css`
+    html{
+      font-family: system-ui, Verdana, Arial, sas-serif
+    }
+    `}
+    />
+    {/* ... */}
       <h1>Hello Frontity</h1>
       <p>Current URL: {state.router.link}</p>
       <nav>
