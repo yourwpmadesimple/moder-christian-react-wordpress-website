@@ -9,7 +9,7 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 
-const Root = ({ state }) => {
+const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
 
   return (
@@ -30,7 +30,14 @@ const Root = ({ state }) => {
     <Header isPostType={data.isPostType} isPage={data.isPage}> {/**** prop isPage. This prop gets passed to a function that we add to our CSS that conditionally checks the boolean value passed in to determine what colour the border should be, i.e. either green in the case of a post or page, or maroon in the case of a list ****/}
     <HeaderContent>
     <h1>Hello Frontity</h1>
-      { state.theme.isUrlVisible ? <p> current URK: {state.router.link}</p> : null}
+
+      { state.theme.isUrlVisible 
+        ? <div>
+        Current URL: {state.router.link}{" "}
+        <Button onClick={actions.theme.toggleUrl}>&#x3c; Hide URL</Button> </div>
+        : <Button onClick={actions.theme.toggleUrl}>Show URL &#x3e;</Button>
+      }
+      
       <Menu>
         <Link link="/">Home</Link>
         <br />
@@ -99,5 +106,19 @@ const Main = styled.main`
     margin-right: 1em;
     color: steelblue;
     text-decoration: none;
+  }
+  `
+
+  const Button = styled.button`
+  background: steelblue;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin-left: 7px;
+  
+
+  :hover {
+    cursor: pointer;
+    color: white;
   }
 `
