@@ -1,7 +1,7 @@
 // File: /packages/my-first-theme/src/components/index.js
 
 import React from "react"
-import { connect, Global, css, styled } from "frontity"
+import { connect, Global, css, styled, Head } from "frontity"
 import Link from "@frontity/components/link"
 import Switch from "@frontity/components/switch"
 
@@ -29,6 +29,15 @@ const Root = ({ state, actions}) => {
     `}
     />
     {/* ... */}
+
+    <Head>
+        <title>Modern Christian Theme</title>
+        <meta
+          name="description"
+          content="Inspired by Blinkand.com"
+        />
+      </Head>
+      
     <Header isPostType={data.isPostType} isPage={data.isPage}> {/**** prop isPage. This prop gets passed to a function that we add to our CSS that conditionally checks the boolean value passed in to determine what colour the border should be, i.e. either green in the case of a post or page, or maroon in the case of a list ****/}
     <HeaderContent>
     <h1>Hello Frontity</h1>
