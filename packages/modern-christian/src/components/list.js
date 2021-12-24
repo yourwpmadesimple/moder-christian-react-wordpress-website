@@ -13,7 +13,7 @@ const List = ({ state }) => {
         const post = state.source[item.type][item.id]
         return (
           <Link key={item.id} link={post.link}>
-            {post.title.rendered}
+          <span dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
             <br />
           </Link>
         )
