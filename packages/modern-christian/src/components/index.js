@@ -9,7 +9,7 @@ import List from "./list"
 import Post from "./post"
 import Page from "./page"
 
-const Root = ({ state, actions }) => {
+const Root = ({ state, actions}) => {
   const data = state.source.get(state.router.link)
 
   return (
@@ -40,9 +40,6 @@ const Root = ({ state, actions }) => {
       
       <Menu>
         <Link link="/">Home</Link>
-        <br />
-        <Link link="/page/2">More posts</Link>
-        <br />
         <Link link="/about-us">About Us</Link>
       </Menu>
       </HeaderContent>
@@ -55,6 +52,7 @@ const Root = ({ state, actions }) => {
       <Post when={data.isPost} />
       <Page when={data.isPage} />
     </Switch>
+    
       </Main>
     </>
   )
@@ -115,10 +113,11 @@ const Main = styled.main`
   color: white;
   padding: 5px 10px;
   margin-left: 7px;
-  
+
 
   :hover {
     cursor: pointer;
     color: white;
   }
 `
+
