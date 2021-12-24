@@ -90,3 +90,14 @@ const Main = styled.main`
     font-size: 0.8em;
     margin-bottom: 1em;
   }`
+
+  const Menu = styled.nav`
+  display: flex;
+  flex-direction: row;
+  margin-top: 1em;
+  & > a {
+    margin-right: 1em;
+    color: steelblue;
+    text-decoration: none;
+  }
+`
