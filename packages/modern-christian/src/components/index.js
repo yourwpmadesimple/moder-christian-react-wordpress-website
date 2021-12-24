@@ -51,8 +51,10 @@ const Root = ({ state, actions}) => {
       <Main>
       <Switch>
       <List when={data.isArchive} />
-      <Post when={data.isPost} />
       <Page when={data.isPage} />
+      <Post when={data.isPost} />
+      <Page when={data.isDestinations} />
+      
     </Switch>
     
       </Main>
