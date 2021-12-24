@@ -27,7 +27,7 @@ const Root = ({ state }) => {
     `}
     />
     {/* ... */}
-    <Header isPostType={data.isPostType}> {/**** prop isPostType. This prop gets passed to a function that we add to our CSS that conditionally checks the boolean value passed in to determine what colour the border should be, i.e. either green in the case of a post or page, or maroon in the case of a list ****/}
+    <Header isPostType={data.isPostType} isPage={data.isPage}> {/**** prop isPage. This prop gets passed to a function that we add to our CSS that conditionally checks the boolean value passed in to determine what colour the border should be, i.e. either green in the case of a post or page, or maroon in the case of a list ****/}
     <HeaderContent>
     <h1>Hello Frontity</h1>
       <p>Current URL: {state.router.link}</p>
@@ -59,7 +59,7 @@ const Header = styled.header`
   background-color: #e5edee;
   border-width: 0 0 8px 0;
   border-style: solid;
-  border-color: ${(props) => (props.isPostType ? "lightseagreen" : "maroon")};
+  border-color: ${(props) => (props.isPostType ? (props.isPage ? 'lightsteelblue' : 'lightseagreen') : 'maroon')};
 
   h1 {
     color: #4a4a4a;
