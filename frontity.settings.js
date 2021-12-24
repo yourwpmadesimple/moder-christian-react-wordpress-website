@@ -51,6 +51,11 @@ const settings = {
               type: "destinations",
               endpoint: "destinations",
               archive: "/destinations"
+            },
+            {
+              type: "regions",
+              endpoint: "regions",
+              archive: "/regions"
             }
           ]
         }

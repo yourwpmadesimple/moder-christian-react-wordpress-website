@@ -6,6 +6,7 @@ import Link from "@frontity/components/link" // addin
 
 const List = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
+  console.log(data)
 
   return (
     <Items>
