@@ -12,9 +12,6 @@ const settings = {
       "name": "modern-christian",
     },
     {
-      "name": "@frontity/html2react"
-    },
-    {
       "name": "@frontity/wp-source",
       "state": {
         "source": {

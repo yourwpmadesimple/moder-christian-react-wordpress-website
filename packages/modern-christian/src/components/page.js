@@ -3,16 +3,15 @@
 import React from "react"
 import { connect } from "frontity"
 
-const Page = ({ state }) => {
+const Page = ({ state, libraries }) => {
   const data = state.source.get(state.router.link)
   const page = state.source[data.type][data.id]
-  console.log('data const: ', data)
-  console.log('page const: ', page)
+  const Html2React = libraries.html2react.component
 
   return (
     <div>
       <h2>{page.title.rendered}</h2>
-      <div dangerouslySetInnerHTML={{ __html: page.content.rendered }} />
+      <Html2React html={page.content.rendered} />
     </div>
   )
 }

@@ -1,6 +1,7 @@
-// File: /packages/my-first-theme/src/index.js
+// File: /packages/modern-christian-theme/src/index.js
 
 import Root from "./components"
+import link from "@frontity/html2react/processors/link";
 
 const myFirstTheme = {
   name: "modern-christian",
@@ -17,6 +18,11 @@ const myFirstTheme = {
       },
     },
   },
+  libraries: {
+    html2react: {
+      processor: [link]
+    }
+  }
 }
 
 export default myFirstTheme
