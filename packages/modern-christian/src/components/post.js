@@ -14,8 +14,10 @@ const Post = ({ state }) => {
   return (
     <div> 
       <h2>{post.title.rendered}</h2>
+      <PostInfo>
       <p><strong>Posted: </strong> {formattedDate} </p>
       <p><strong>Author: </strong> {author.name} </p>
+      </PostInfo>
       <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
     </div>
   )
