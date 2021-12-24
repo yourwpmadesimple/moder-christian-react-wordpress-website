@@ -11,9 +11,13 @@ const List = ({ state, actions, libraries }) => {
       {data.items.map((item) => {
         const post = state.source[item.type][item.id]
         return (
-          <Link key={item.id} link={post.link}>
+          <div key={item.id}>
+          <Link link={post.link}>
           <Html2React html={post.title.rendered} />
           </Link>
+          <Html2React html={post.excerpt.rendered} />
+          </div>
+          
         )
       })}
       <PrevNextNav>
